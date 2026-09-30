@@ -82,7 +82,7 @@ comidas.forEach(comida => {
       <h2>${comida.nombre}</h2>
       <span class="categoria">${comida.categoria}</span>
     </header>
-    <p class="provincia">📍 ${comida.provincia}</p>
+    <p class="provincia">${comida.provincia}</p>
     <div class="ingredientes">
       <strong>Ingredientes:</strong>
       <ul>
