@@ -88,7 +88,7 @@ function actualizarFiltros() {
     if(categorias.includes(comida.categoria)){
     categorias.push (comida.categoria)}
   })
-  filtroCategoria.innerHTML += `<option value="${categoria}">${categoria}</option>`
+  filtroCategoria.innerHTML += `g<option value="${categoria}">${categoria}</option>`
 }
 const agregarIngredienteBtn = document.getElementById("agregarIngrediente")
 const ingredientesContainer = document.querySelector(".contenedor-ingredientes")
