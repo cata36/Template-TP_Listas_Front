@@ -12,12 +12,12 @@ fetch('./data/comidas-extended.json')          // Ruta al archivo JSON
     console.error('Error al leer el archivo JSON:', error);
   });
 
-let comidas;
+let comidas= [];
 
 const container = document.getElementById('comidaContainer');
 
-function mostrarComidas (lista){
-  container.innerHTML= ""
+function mostrarComidas (lista = comidas){
+  container.innerHTML= "";
   lista forEach(comida => {
     container.innerHTML += `
     <article class="card">
@@ -52,7 +52,7 @@ comidas.forEach(comida => {
       </ul>
     </div>
   </article>
-  `; 
+  `}; 
 })
 
 const filtroCategoria = document.getElementById ("filtroCategoria")
@@ -79,3 +79,23 @@ function buscar() {
 
 filtroCategoria.addEventListener("change", filtrar)
 filtroProvincia.addEventListener("change", filtrar)
+busqueda.addEventListener("input", buscar)
+
+function actualizarFiltros() {
+  let categorias = []
+
+  comidas.forEach(comida => {
+    if(categorias.includes(comida.categoria)){
+    categorias.push (comida.categoria)}
+  })
+  filtroCategoria.innerHTML += `<option value="${categoria}">${categoria}</option>`
+}
+const agregarIngredienteBtn = document.getElementById("agregarIngrediente")
+const ingredientesContainer = document.querySelector(".contenedor-ingredientes")
+
+agregarIngredientes.addEventListener("click", () => {
+  ingredientesContainer.innerHTML +=
+  <input type = "text" class="ingrediente" placeholder= "ingrediente" required>
+
+  </input>
+})
